@@ -42,7 +42,7 @@ Leyfilegt er að slökkva á ákveðnum villum *ef ástæða er til*  og skal ti
 
 ## Útlit
 
-Miða skal við útlit í `utlit/` en leyfilegt er að útfæra sitt eigið svo lengi sem öll virkni er til staðar.
+Gefið er útlit í CSS skrá fyrir útlit í `utlit/`. Leyfilegt er að útfæra sitt eigið svo lengi sem öll virkni er til staðar.
 
 Einnig er myndband sem sýnir virkni, og hvernig eftir að fyrsta fyrirspurn hefur átt sér stað, aðeins fyrirspurnir á vefþjónustu eiga sér stað.
 
@@ -56,10 +56,9 @@ Einnig er myndband sem sýnir virkni, og hvernig eftir að fyrsta fyrirspurn hef
 
 ## Mat
 
-* 10% Útlit útfært
 * 20% Snyrtilegur JavaScript kóði, engar eslint villur
 * 20% Single-page app virkni útfærð
-* 20% Gögn sótt frá vefþjónustu, loading state og error state til staðar, cache virkni útfærð
+* 30% Gögn sótt frá vefþjónustu, loading state og error state til staðar, cache virkni útfærð
 * 30% Allt viðmót smíðað með JavaScript DOM aðgerðum
 
 ## Sett fyrir
