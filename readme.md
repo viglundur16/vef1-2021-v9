@@ -1,6 +1,6 @@
 # Vefforritun 1, 2021, verkefni 9
 
-[Kynning í fyrirlestri](https://youtu.be/)
+[Kynning í fyrirlestri](https://youtu.be/z-Z1u4FicgQ)
 
 Verkefni 9 snýst um að tengjast RESTful vefþjónustu sem skilar JSON gögnum með fréttum af ruv.is.
 
