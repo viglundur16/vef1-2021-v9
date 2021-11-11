@@ -1,5 +1,6 @@
 // TODO importa því sem nota þarf
-
+import { fetchNews } from './lib/news.js';
+import { fetchAndRenderLists } from './lib/ui.js';
 /** Fjöldi frétta til að birta á forsíðu */
 const CATEGORY_ITEMS_ON_FRONTPAGE = 5;
 
@@ -11,22 +12,36 @@ const main = document.querySelector('main');
  * - `/` birtir yfirlit
  * - `/?category=X` birtir yfirlit fyrir flokk `X`
  */
-function route() {
-  // Athugum hvort það sé verið að biðja um category í URL, t.d.
-  // /?category=menning
+async function route() {
+  let fetched;
 
-  // Ef svo er, birtum fréttir fyrir þann flokk
+  const fetchingText = document.createElement('p');
+  fetchingText.innerText = 'Sæki lista af fréttum...';
+  main.appendChild(fetchingText);
 
-  // Annars birtum við „forsíðu“
+  if (window.location.search === '') {
+    
+    fetched = await fetchNews('');
+
+    main.removeChild(fetchingText);
+
+    if (fetched === null) {
+      const err = document.createElement('p');
+      err.innerText = 'upp kom villa';
+
+    } else {
+      let len;
+      if (fetched.length > 5) {
+        len = 5;
+      } 
+      else {
+        len = fetched.length;
+      }
+      for (let i = 0; i < len; i++) {
+        fetchAndRenderLists(fetched[i].id);
+      }
+    }
+  }
 }
 
-/**
- * Sér um að taka við `popstate` atburð sem gerist þegar ýtt er á back takka í
- * vafra. Sjáum þá um að birta réttan skjá.
- */
-window.onpopstate = () => {
-  // TODO útfæra
-};
-
-// Í fyrsta skipti sem vefur er opnaður birtum við það sem beðið er um út frá URL
 route();
